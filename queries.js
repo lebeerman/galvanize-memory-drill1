@@ -2,12 +2,13 @@ const database = require("./database-connection");
 
 module.exports = {
     list(){
-        return database('resolotion').select();
+        return database('resolution').select();
     },
     read(id){
         return database('resolution')
             .where('id', id)
-            .select();
+            .select()
+            .first();
     },
     create(resolution){
         return database('resolution')
